@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <package name="default" namespace="/" extends="struts-default">
+    	<default-action-ref name="index"></default-action-ref>
+    	<action name="index">
+			<result>/login.jsp</result>
+		</action>
+		<!-- 系统登录 -->
+		<!-- <action name="Login_*" class="com.zondy.web.page.LoginAction" method="{1}">    		
+    		<result name="success">/index.jsp</result>
+    		<result name="fail">/login.jsp</result>
+    	</action> -->
+    	<!-- <action name="User_*" class="com.zondy.web.page.UserAction" method="{1}">    		
+    		<result name="success">/index.jsp</result>
+    		<result name="fail">/register.jsp</result>
+    	</action> -->
+    </package>
+</struts>    

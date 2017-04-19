@@ -1,0 +1,141 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family:"Times New Roman",Serif,Sans-serif,Verdana,Arial,Georgia;
+}
+
+/*头部蓝色部分样式*/
+.jh_title {
+	width: 100%;
+	height: 9%;
+	background-color: #62A3F7;
+	color: white;
+	font-size: 14px;
+}
+
+
+/*头部的对齐*/
+.jh_title .jh_title_word {
+	display: inline;
+}
+
+
+/*头部的输入框*/
+.jh_title #jh_text {
+	background-color: white;
+	height: 45%;
+	width: 14%;
+	border: none;
+	border-color: white;
+	border-width: 1px;
+	border-radius: 4px;
+	margin-left: 0.7%;
+	margin-top: 1.2%;
+	color: black;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.jh_title .jh_text {
+	background-color: white;
+	height: 45%;
+	width: 14%;
+	border: none;
+	border-color: white;
+	border-width: 1px;
+	border-radius: 4px;
+	margin-left: 0.7%;
+	margin-top: 1.2%;
+	color: black;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+
+/*选择单位和关键词*/
+.jh_title_word .word {
+	margin-left: 2.7%;
+}
+
+.jh_title_word #search {
+	margin-left: 0.7%;
+	margin-bottom: -0.2%;
+}
+
+/*职务整体*/
+.jh_title_word #jh_zhiwu {
+	display: inline;
+	margin-left: 2.9%;
+}
+
+.jh_title_word >span {
+	margin-left: 0.3%;
+}
+
+/*radio选项的间距/
+.jh_title_word .radio_zw {
+	margin-left: 2%;
+}
+
+/*单位列表*/
+.body_dwlb {
+	width: 20.5%;
+	height: 90%;
+	float:left;
+ 	overflow-y: scroll;
+}
+
+.body_dwlb .dwlb_title {
+	margin-left: 9%;
+	font-size: 15px;
+	padding-top: 5%;
+}
+
+/*右边的表格*/
+.body_bg {
+	width: 79.2%;
+	height: 90%;
+	background-color: #EFF1F1;
+	margin-left: 20.5%;
+	border: 2px solid rgba(144, 133, 133, 0.08);
+}
+
+
+.jhjm_chart {
+	padding-top: 1%;
+	padding-left: 1%;
+	padding-right: 2%;
+}
+
+/*表格内容*/
+#chart_content {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	width: 100%;
+	border-collapse: collapse;
+	border: 2px solid rgba(144, 133, 133, 0.08);
+}
+/*表格的间距样式*/
+#chart_content td,
+#chart_content th {
+	font-size: 1.1em;
+	text-align: center;
+	padding: 1% 1% 1% 1%;
+}
+/*表格内容的样式*/
+#chart_content th {
+	font-size: 1.2em;
+	text-align: center;
+	padding-top: 1.5%;
+	padding-bottom: 1.5%;
+	background-color: #CDDDE9;
+	color: black;
+}
+
+.chart_content tr.alt {
+	color: #000000;
+	background-color: white;
+}
+
+/*覆盖改变某行的背景色*/
+#chart_content tr:hover,#chart_content tr.hilite{
+	 background-color:gainsboro;
+     color:#0000CC;
+}

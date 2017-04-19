@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	                    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	http://www.directwebremoting.org/schema/spring-dwr
+	http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd"
+	default-autowire="byName">
+	<bean id="propertyConfig"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:system.properties</value>
+		</property>
+	</bean>
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@192.168.84.6:1521:ORCL" />
+		<property name="username" value="pub"></property>
+		<property name="password" value="pub"></property>
+	</bean>
+	<!-- 事物的配置-->
+	<!--  
+		<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean> 
+	<aop:config> 
+		<aop:pointcut id="bussinessservice" expression="execution(* com.zondy.service.impl.*Impl.*(..))" /> 
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="bussinessservice" /> 
+	</aop:config> 
+	<tx:advice id="txAdvice" transaction-manager="txManager"> 
+		<tx:attributes> 
+			<tx:method name="Tran*" propagation="REQUIRED" />
+		 </tx:attributes>
+	 </tx:advice> 
+	 -->
+	 <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<bean id="property" class="com.zondy.property.PropertiesConfig">
+		
+	</bean>
+	<bean id="searchImpl" class="com.zondy.service.impl.SearchImpl">
+		<property name="jdbctmp" ref="jdbcTemplate"></property>
+		<property name="property" ref="property"></property>
+	</bean>
+	
+</beans>
